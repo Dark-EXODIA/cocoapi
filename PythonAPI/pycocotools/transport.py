@@ -19,14 +19,14 @@ for n in range(len(imgIds)):
     annIds = coco.getAnnIds(imgIds=img['id'], iscrowd=None)
     anns = coco.loadAnns(annIds)
 
-    xml = '<annotation>\n<folder>\nCOCO2014pascalformat\n</folder>\n<filename>\n'
+    xml = '<annotation>\n<folder>\nCOCO2014pascalformat\n</folder>\n<filename>'
     xml += img['file_name'] + '\n</filename>\n<source>\n<database>\nCOCO2014pascalformat\n</database>\n</source>\n<size>\n'
     xml += '<width>\n' + str(img['width']) + '\n</width>\n' + '<height>\n' + str(img['height']) + '\n</height>\n'
     xml += '<depth>\n3\n</depth>\n</size>\n<segmented>\n0\n</segmented>\n'
 
     for i in range(len(anns)):
         bbox = anns[i]['bbox']
-        xml += '<object>\n<name>\n' + str(anns[i]['category_id']) + '\n</name>\n'
+        xml += '<object>\n<name>' + str(anns[i]['category_id']) + '</name>\n'
         xml += '<bndbox>\n<xmin>\n' + str(int(round(bbox[0]))) + '\n</xmin>\n'
         xml += '<ymin>\n' + str(int(round(bbox[1]))) + '\n</ymin>\n'
         xml += '<xmax>\n' + str(int(round(bbox[0] + bbox[2]))) + '\n</xmax>\n'
