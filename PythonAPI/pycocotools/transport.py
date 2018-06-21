@@ -14,7 +14,7 @@ directory = './annotations_pascalformat/'
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-for n in xrange(len(imgIds)):
+for n in range(len(imgIds)):
     img = coco.loadImgs(imgIds[n])[0]
     annIds = coco.getAnnIds(imgIds=img['id'], iscrowd=None)
     anns = coco.loadAnns(annIds)
@@ -24,7 +24,7 @@ for n in xrange(len(imgIds)):
     xml += '<width>\n' + str(img['width']) + '\n</width>\n' + '<height>\n' + str(img['height']) + '\n</height>\n'
     xml += '<depth>\n3\n</depth>\n</size>\n<segmented>\n0\n</segmented>\n'
 
-    for i in xrange(len(anns)):
+    for i in range(len(anns)):
         bbox = anns[i]['bbox']
         xml += '<object>\n<name>\n' + str(anns[i]['category_id']) + '\n</name>\n'
         xml += '<bndbox>\n<xmin>\n' + str(int(round(bbox[0]))) + '\n</xmin>\n'
