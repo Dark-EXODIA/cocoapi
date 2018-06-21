@@ -20,7 +20,7 @@ for n in range(len(imgIds)):
     anns = coco.loadAnns(annIds)
 
     xml = '<annotation>\n<folder>\nCOCO2014pascalformat\n</folder>\n<filename>'
-    xml += img['file_name'] + '\n</filename>\n<source>\n<database>\nCOCO2014pascalformat\n</database>\n</source>\n<size>\n'
+    xml += img['file_name'] + '</filename>\n<source>\n<database>\nCOCO2014pascalformat\n</database>\n</source>\n<size>\n'
     xml += '<width>\n' + str(img['width']) + '\n</width>\n' + '<height>\n' + str(img['height']) + '\n</height>\n'
     xml += '<depth>\n3\n</depth>\n</size>\n<segmented>\n0\n</segmented>\n'
 
